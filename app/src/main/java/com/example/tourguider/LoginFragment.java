@@ -27,6 +27,14 @@ public class LoginFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        if (SharedPrefManager.getInstance(getContext()).isLoggedIn()) {
+            Fragment newFragment = new ProfileFragment();
+            FragmentManager fragmentManager = getFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.loginFragment, newFragment)
+                    .addToBackStack(this.getClass().getName())
+                    .commit();
+        }
     }
 
     @Override
@@ -101,8 +109,12 @@ public class LoginFragment extends Fragment {
                         );
 
                         SharedPrefManager.getInstance(getContext()).userLogin(user);
-
-                        Toast.makeText(getContext(), userJson.getString("username"), Toast.LENGTH_SHORT).show();
+                        Fragment newFragment = new ProfileFragment();
+                        FragmentManager fragmentManager = getFragmentManager();
+                        fragmentManager.beginTransaction()
+                                .replace(R.id.loginFragment, newFragment)
+                                .addToBackStack(this.getClass().getName())
+                                .commit();
                     } else {
                         Toast.makeText(getContext(), "Invalid username or password", Toast.LENGTH_SHORT).show();
                     }
