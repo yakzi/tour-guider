@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
@@ -40,10 +41,12 @@ public class AddTripFragment extends Fragment {
 
     private ImageView uploadImage;
 
+    private RadioGroup radioGroup;
     private Bitmap bitmap;
 
     private Uri filePath;
     public static final String UPLOAD_KEY = "image";
+    private  String type = "foot";
     private int PICK_IMAGE_REQUEST = 1;
 
 
@@ -64,6 +67,24 @@ public class AddTripFragment extends Fragment {
         place = view.findViewById(R.id.editTripPlace);
         desc = view.findViewById(R.id.editTextDescription);
         uploadImage = view.findViewById(R.id.uploadImage);
+        radioGroup = view.findViewById(R.id.radioGroup);
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                // find which radio button is selected
+                if (checkedId == R.id.foot) {
+                    type = "foot";
+                } else if (checkedId == R.id.bike) {
+                    type = "bike";
+                } else if (checkedId == R.id.car) {
+                    type = "car";
+                } else if (checkedId == R.id.moto) {
+                    type = "moto";
+                }
+            }
+        });
 
         buttonSelectImg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,12 +96,17 @@ public class AddTripFragment extends Fragment {
         buttonAddTrip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                uploadImage(getName(), getDesc(), getPlace());
+                uploadImage(getName(), getDesc(), getPlace(), getType());
             }
         });
 
         // Inflate the layout for this fragment
         return view;
+    }
+
+    private String getType()
+    {
+        return type;
     }
 
     private String getName()
@@ -129,7 +155,7 @@ public class AddTripFragment extends Fragment {
         return encodedImage;
     }
 
-    private void uploadImage(final String name, final String desc, final String place){
+    private void uploadImage(final String name, final String desc, final String place, final String type){
         class UploadImage extends AsyncTask<Bitmap,Void,String> {
 
             RequestHandler rh = new RequestHandler();
@@ -155,6 +181,7 @@ public class AddTripFragment extends Fragment {
                 data.put("tripname", name);
                 data.put("description", desc);
                 data.put("place", place);
+                data.put("type", type);
 
                 String result = rh.sendPostRequest(URLs.URL_ADD_TRIP,data);
 

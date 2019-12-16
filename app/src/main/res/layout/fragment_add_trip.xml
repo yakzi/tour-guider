@@ -34,7 +34,7 @@
             android:layout_weight="1"
             android:layout_marginStart="100dp"
             android:layout_marginLeft="100dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="70dp"
             android:layout_marginEnd="100dp"
             android:layout_marginRight="100dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -99,6 +99,39 @@
             android:background="@color/colorEditTextBackground"
             android:hint="Description"
             />
+        
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTextDescription"
+            android:layout_margin="20dp"
+            >
+
+            <RadioButton
+                android:id="@+id/foot"
+                android:layout_width="wrap_content"
+                android:checked="true"
+                android:layout_height="wrap_content"
+                android:text="By foot"/>
+            <RadioButton
+                android:id="@+id/bike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="By bike"/>
+            <RadioButton
+                android:id="@+id/car"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="By car"/>
+            <RadioButton
+                android:id="@+id/moto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="By Motorcycle"/>
+        </RadioGroup>
 
 
         <Button
@@ -108,7 +141,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/editTextDescription"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="140dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:text="Add" />
