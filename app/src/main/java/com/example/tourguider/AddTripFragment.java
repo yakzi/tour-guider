@@ -45,8 +45,8 @@ public class AddTripFragment extends Fragment {
     private Bitmap bitmap;
 
     private Uri filePath;
-    public static final String UPLOAD_KEY = "image";
-    private  String type = "foot";
+    public  static final String UPLOAD_KEY = "image";
+    private String type = "foot";
     private int PICK_IMAGE_REQUEST = 1;
 
 

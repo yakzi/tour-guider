@@ -3,19 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddTripFragment">
+    tools:context=".AddTripFragment"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorBackground">
+        android:background="@drawable/backgroundblur"
+        >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add tour"
+            android:text="Add a tour"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -29,7 +31,7 @@
 
         <ImageView
             android:id="@+id/uploadImage"
-            android:layout_width="200dp"
+            android:layout_width="300dp"
             android:layout_height="200dp"
             android:layout_weight="1"
             android:layout_marginStart="100dp"
@@ -42,6 +44,8 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
+            android:fontFamily="monospace"
+            android:textStyle="bold"
             android:id="@+id/buttonSelectImg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,9 +55,14 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:text="Select Image" />
+            android:text="Select main tour Image"
+            android:textColor="@color/colorBackground"
+            android:background="@color/colorPrimary"/>
 
         <EditText
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            android:textSize="20sp"
             android:id="@+id/editTextTripName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -68,6 +77,9 @@
             />
 
         <EditText
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            android:textSize="20sp"
             android:id="@+id/editTripPlace"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -82,13 +94,16 @@
             />
 
         <EditText
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            android:textSize="20sp"
             android:id="@+id/editTextDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:lines="8"
-            android:minLines="6"
+            android:minLines="10"
             android:gravity="top|left"
-            android:maxLines="20"
+            android:maxLines="30"
             android:scrollbars="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -99,6 +114,17 @@
             android:background="@color/colorEditTextBackground"
             android:hint="Description"
             />
+
+        <TextView
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTextDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trip type:"/>
         
         <RadioGroup
             android:id="@+id/radioGroup"
@@ -107,26 +133,34 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/editTextDescription"
-            android:layout_margin="20dp"
+            android:layout_margin="40dp"
             >
 
             <RadioButton
+                android:fontFamily="monospace"
+                android:textStyle="bold"
                 android:id="@+id/foot"
                 android:layout_width="wrap_content"
                 android:checked="true"
                 android:layout_height="wrap_content"
                 android:text="By foot"/>
             <RadioButton
+                android:fontFamily="monospace"
+                android:textStyle="bold"
                 android:id="@+id/bike"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="By bike"/>
             <RadioButton
+                android:fontFamily="monospace"
+                android:textStyle="bold"
                 android:id="@+id/car"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="By car"/>
             <RadioButton
+                android:fontFamily="monospace"
+                android:textStyle="bold"
                 android:id="@+id/moto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -135,13 +169,15 @@
 
 
         <Button
+            android:fontFamily="monospace"
+            android:textStyle="bold"
             android:id="@+id/buttonAddTrip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/editTextDescription"
-            android:layout_marginTop="140dp"
+            android:layout_marginTop="180dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:text="Add" />

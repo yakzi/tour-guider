@@ -16,8 +16,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorBackground">
-<!--        android:background="@drawable/background">-->
+        android:background="@drawable/backgroundblur">
 
         <TextView
             android:layout_width="wrap_content"
@@ -31,7 +30,7 @@
             android:layout_marginRight="100dp"
             android:fontFamily="monospace"
             android:textStyle="bold"
-            android:textSize="25sp"
+            android:textSize="20sp"
             />
 
         <ImageView
@@ -49,6 +48,9 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            android:textSize="20sp"
             android:id="@+id/editTextUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -63,6 +65,9 @@
             />
 
         <EditText
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            android:textSize="20sp"
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -77,6 +82,9 @@
             />
 
         <Button
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            android:textSize="20sp"
             android:id="@+id/buttonLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -86,15 +94,18 @@
             android:layout_marginTop="80dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:text="Login" />
+            android:text="Login"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/colorBackground"/>
 
         <TextView
+            android:fontFamily="monospace"
             android:id="@+id/newAccTextClick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Don't have an account? Click here to register."
-            android:textSize="15sp"
+            android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
