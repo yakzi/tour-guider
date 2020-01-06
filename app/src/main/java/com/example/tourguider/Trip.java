@@ -1,5 +1,9 @@
 package com.example.tourguider;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
+
 public class Trip {
 
     private int id_trip;
@@ -136,5 +140,12 @@ public class Trip {
 
     public void setPhoto_url(String photo_url) {
         this.photo_url = photo_url;
+    }
+
+    public Bitmap getPhoto() {
+        byte[] decodedString = Base64.decode(getPhoto_url(), Base64.DEFAULT);
+        Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+
+        return decodedByte;
     }
 }

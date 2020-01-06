@@ -21,16 +21,45 @@ import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
 
+    private ArrayList<Trip> tripsList = new ArrayList<>();;
+    private RecyclerView recyclerView;
+    private RecyclerTripsAdapter adapter;
+    private RecyclerView.LayoutManager layoutManager;
+
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        loadTrips();
+        initRecycler(view);
+
         return view;
     }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        loadTrips();
+
+    }
+
+    public void initRecycler(View view) {
+        recyclerView = view.findViewById(R.id.recyclerView);
+        layoutManager = new LinearLayoutManager(getContext());
+        adapter = new RecyclerTripsAdapter(tripsList);
+
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
+
+        adapter.setOnItemClickListener(new RecyclerTripsAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Toast.makeText(getContext(), "Clicked: " + position, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 
     private void loadTrips(){
 
@@ -70,7 +99,8 @@ public class HomeFragment extends Fragment {
                                     tripJson.getString("email"),
                                     tripJson.getString("photo_url")
                             );
-                            Toast.makeText(getContext(), "", Toast.LENGTH_SHORT).show();
+                            tripsList.add(trip);
+                            adapter.notifyDataSetChanged();
                         }
 
 
