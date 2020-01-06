@@ -103,7 +103,7 @@ public class LoginFragment extends Fragment {
                         JSONObject userJson = obj.getJSONObject("user");
 
                         User user = new User(
-                                userJson.getInt("id"),          //Z BAZA PIOTRKA (DOCELOWA) DAC id_user ZAMIAST id
+                                userJson.getInt("id_user"),          //Z BAZA PIOTRKA (DOCELOWA) DAC id_user ZAMIAST id
                                 userJson.getString("username"),
                                 userJson.getString("email")
                         );

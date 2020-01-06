@@ -31,15 +31,17 @@ public class RequestHandler {
             conn.setDoInput(true);
             conn.setDoOutput(true);
 
-            OutputStream os = conn.getOutputStream();
+            if (postDataParams != null) {
+                OutputStream os = conn.getOutputStream();
 
-            BufferedWriter writer = new BufferedWriter(
-                    new OutputStreamWriter(os, "UTF-8"));
-            writer.write(getPostDataString(postDataParams));
+                BufferedWriter writer = new BufferedWriter(
+                        new OutputStreamWriter(os, "UTF-8"));
+                writer.write(getPostDataString(postDataParams));
 
-            writer.flush();
-            writer.close();
-            os.close();
+                writer.flush();
+                writer.close();
+                os.close();
+            }
             int responseCode = conn.getResponseCode();
 
             if (responseCode == HttpsURLConnection.HTTP_OK) {
