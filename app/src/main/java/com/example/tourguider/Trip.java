@@ -4,7 +4,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Base64;
 
-public class Trip {
+import java.io.Serializable;
+
+public class Trip implements Serializable {
 
     private int id_trip;
     private String trip_name;

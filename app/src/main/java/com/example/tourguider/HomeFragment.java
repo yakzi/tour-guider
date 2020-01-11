@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -55,7 +56,17 @@ public class HomeFragment extends Fragment {
         adapter.setOnItemClickListener(new RecyclerTripsAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                Toast.makeText(getContext(), "Clicked: " + position, Toast.LENGTH_SHORT).show();
+                Fragment newFragment = new DisplayTripFragment();
+
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("TRIP", tripsList.get(position));
+                newFragment.setArguments(bundle);
+
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.homeFragment, newFragment)
+                        .addToBackStack(this.getClass().getName())
+                        .commit();
             }
         });
     }
