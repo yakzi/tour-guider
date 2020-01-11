@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 public class RecyclerTripsAdapter extends RecyclerView.Adapter<RecyclerTripsAdapter.TripViewHolder> {
@@ -70,8 +72,11 @@ public class RecyclerTripsAdapter extends RecyclerView.Adapter<RecyclerTripsAdap
     @Override
     public void onBindViewHolder(TripViewHolder holder, int position) {
         Trip currentTrip = tripsList.get(position);
-
-        holder.tripImage.setImageBitmap(currentTrip.getPhoto());
+        Glide.with(holder.itemView)
+                .load(currentTrip.getPhoto())
+                .centerCrop()
+                .into(holder.tripImage);
+        //holder.tripImage.setImageBitmap(currentTrip.getPhoto());
         holder.tripName.setText(currentTrip.getTrip_name());
         holder.tripPlace.setText(currentTrip.getPlace_name());
         holder.tripLikes.setText(String.valueOf(currentTrip.getLikes()));
