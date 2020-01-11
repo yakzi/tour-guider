@@ -42,8 +42,11 @@ public class DisplayTripFragment extends Fragment {
 
         Bundle bundle = getArguments();
         Trip trip= (Trip) bundle.getSerializable("TRIP");
-        
-        tripImage.setImageBitmap(trip.getPhoto());
+
+        Glide.with(this)
+                .load(trip.getPhoto())
+                .centerCrop()
+                .into(tripImage);
         tripName.setText(trip.getTrip_name());
         tripPlace.setText(trip.getPlace_name());
         tripDesc.setText(trip.getDescription());
