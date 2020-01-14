@@ -22,8 +22,6 @@
             android:layout_marginLeft="100dp"
             android:layout_marginTop="100dp"
             android:layout_marginRight="100dp"
-            android:fontFamily="monospace"
-            android:textStyle="bold"
             android:textSize="20sp"
             />
 
@@ -42,8 +40,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:fontFamily="monospace"
-            android:textStyle="bold"
             android:textSize="20sp"
             android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
@@ -60,8 +56,6 @@
             />
 
         <EditText
-            android:fontFamily="monospace"
-            android:textStyle="bold"
             android:textSize="20sp"
             android:id="@+id/editTextUsername"
             android:layout_width="match_parent"
@@ -77,8 +71,6 @@
             />
 
         <EditText
-            android:fontFamily="monospace"
-            android:textStyle="bold"
             android:textSize="20sp"
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
@@ -94,8 +86,6 @@
             />
 
         <Button
-            android:fontFamily="monospace"
-            android:textStyle="bold"
             android:id="@+id/buttonLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

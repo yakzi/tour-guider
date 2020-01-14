@@ -24,8 +24,6 @@
             android:layout_marginLeft="100dp"
             android:layout_marginTop="30dp"
             android:layout_marginRight="100dp"
-            android:fontFamily="monospace"
-            android:textStyle="bold"
             android:textSize="20sp"
             />
 
@@ -44,8 +42,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:fontFamily="monospace"
-            android:textStyle="bold"
             android:id="@+id/buttonSelectImg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -60,8 +56,6 @@
             android:background="@color/colorPrimary"/>
 
         <EditText
-            android:fontFamily="monospace"
-            android:textStyle="bold"
             android:textSize="20sp"
             android:id="@+id/editTextTripName"
             android:layout_width="match_parent"
@@ -77,8 +71,6 @@
             />
 
         <EditText
-            android:fontFamily="monospace"
-            android:textStyle="bold"
             android:textSize="20sp"
             android:id="@+id/editTripPlace"
             android:layout_width="match_parent"
@@ -94,8 +86,6 @@
             />
 
         <EditText
-            android:fontFamily="monospace"
-            android:textStyle="bold"
             android:textSize="20sp"
             android:id="@+id/editTextDescription"
             android:layout_width="match_parent"
@@ -116,8 +106,6 @@
             />
 
         <TextView
-            android:fontFamily="monospace"
-            android:textStyle="bold"
             android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -137,30 +125,22 @@
             >
 
             <RadioButton
-                android:fontFamily="monospace"
-                android:textStyle="bold"
                 android:id="@+id/foot"
                 android:layout_width="wrap_content"
                 android:checked="true"
                 android:layout_height="wrap_content"
-                android:text="By foot"/>
+                android:text="By Foot"/>
             <RadioButton
-                android:fontFamily="monospace"
-                android:textStyle="bold"
                 android:id="@+id/bike"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="By bike"/>
+                android:text="By Bike"/>
             <RadioButton
-                android:fontFamily="monospace"
-                android:textStyle="bold"
                 android:id="@+id/car"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="By car"/>
+                android:text="By Car"/>
             <RadioButton
-                android:fontFamily="monospace"
-                android:textStyle="bold"
                 android:id="@+id/moto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -169,8 +149,6 @@
 
 
         <Button
-            android:fontFamily="monospace"
-            android:textStyle="bold"
             android:id="@+id/buttonAddTrip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
