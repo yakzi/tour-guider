@@ -79,7 +79,7 @@ public class RecyclerTripsAdapter extends RecyclerView.Adapter<RecyclerTripsAdap
         //holder.tripImage.setImageBitmap(currentTrip.getPhoto());
         holder.tripName.setText(currentTrip.getTrip_name());
         holder.tripPlace.setText(currentTrip.getPlace_name());
-        holder.tripLikes.setText(String.valueOf(currentTrip.getLikes()));
+        holder.tripLikes.setText("Likes: " + currentTrip.getLikes());
     }
 
     @Override

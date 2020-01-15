@@ -116,7 +116,7 @@ public class HomeFragment extends Fragment {
 
 
                     } else {
-                        Toast.makeText(getContext(), "Server error (Piotrek's fault)", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Server error", Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

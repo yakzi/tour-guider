@@ -14,6 +14,7 @@
         android:background="@drawable/backgroundblur">
 
         <TextView
+            android:textStyle="bold"
             android:id="@+id/tripName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -80,6 +81,8 @@
             />
 
         <TextView
+            android:textStyle="bold"
+            android:textSize="15sp"
             android:layout_marginBottom="10dp"
             android:layout_marginRight="100dp"
             android:id="@+id/typeLabel"
@@ -92,6 +95,8 @@
             android:text="Trip type:"/>
 
         <TextView
+            android:textStyle="bold"
+            android:textSize="15sp"
             android:id="@+id/tripType"
             android:layout_marginTop="10dp"
             app:layout_constraintLeft_toRightOf="@id/typeLabel"
@@ -101,6 +106,78 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TRIP TYPE"/>
+
+        <TextView
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="100dp"
+            android:id="@+id/tripPriceLabel"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/typeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price: "/>
+
+        <TextView
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:id="@+id/tripPrice"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toRightOf="@id/typeLabel"
+            app:layout_constraintStart_toStartOf="@id/typeLabel"
+            app:layout_constraintTop_toBottomOf="@id/typeLabel"
+            android:layout_marginLeft="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TRIP PRICE"/>
+
+        <Button
+            android:textSize="20sp"
+            android:id="@+id/buttonLikeTrip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tripPrice"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:text="Like this trip!"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/colorBackground"/>
+
+        <Button
+            android:textSize="20sp"
+            android:id="@+id/buttonAddToObservedTrip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tripPrice"
+            android:layout_marginTop="110dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:text="Add to observed"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/colorBackground"/>
+
+        <Button
+            android:textSize="20sp"
+            android:id="@+id/buttonTakePart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tripPrice"
+            android:layout_marginTop="170dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:text="Take part in this trip"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/colorBackground"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

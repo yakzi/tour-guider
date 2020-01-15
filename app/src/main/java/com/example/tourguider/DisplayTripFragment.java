@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
+import org.w3c.dom.Text;
+
 public class DisplayTripFragment extends Fragment {
 
     private ImageView tripImage;
@@ -23,6 +25,7 @@ public class DisplayTripFragment extends Fragment {
     private TextView tripDesc;
     private TextView tripType;
     private TextView tripPlace;
+    private TextView tripPrice;
 
     public DisplayTripFragment() {
 
@@ -39,6 +42,7 @@ public class DisplayTripFragment extends Fragment {
         tripName = view.findViewById(R.id.tripName);
         tripType = view.findViewById(R.id.tripType);
         tripPlace = view.findViewById(R.id.tripPlace);
+        tripPrice = view.findViewById(R.id.tripPrice);
 
         Bundle bundle = getArguments();
         Trip trip= (Trip) bundle.getSerializable("TRIP");
@@ -50,6 +54,7 @@ public class DisplayTripFragment extends Fragment {
         tripName.setText(trip.getTrip_name());
         tripPlace.setText(trip.getPlace_name());
         tripDesc.setText(trip.getDescription());
+        tripPrice.setText(trip.getPrice() + " PLN");
 
         if(trip.isBy_bike()) tripType.setText("Bike");
         if(trip.isBy_car()) tripType.setText("Car");
