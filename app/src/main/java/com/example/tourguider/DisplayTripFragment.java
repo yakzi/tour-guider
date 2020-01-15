@@ -26,6 +26,7 @@ public class DisplayTripFragment extends Fragment {
     private TextView tripType;
     private TextView tripPlace;
     private TextView tripPrice;
+    private TextView tripLikes;
 
     public DisplayTripFragment() {
 
@@ -43,6 +44,7 @@ public class DisplayTripFragment extends Fragment {
         tripType = view.findViewById(R.id.tripType);
         tripPlace = view.findViewById(R.id.tripPlace);
         tripPrice = view.findViewById(R.id.tripPrice);
+        tripLikes = view.findViewById(R.id.likesText);
 
         Bundle bundle = getArguments();
         Trip trip= (Trip) bundle.getSerializable("TRIP");
@@ -55,11 +57,12 @@ public class DisplayTripFragment extends Fragment {
         tripPlace.setText(trip.getPlace_name());
         tripDesc.setText(trip.getDescription());
         tripPrice.setText(trip.getPrice() + " PLN");
+        tripLikes.setText(trip.getLikes() + " People");
 
-        if(trip.isBy_bike()) tripType.setText("Bike");
-        if(trip.isBy_car()) tripType.setText("Car");
-        if(trip.isBy_foot()) tripType.setText("Foot");
-        if(trip.isBy_moto()) tripType.setText("Motorcycle");
+        if(trip.isBy_bike()) tripType.setText("By bicycle");
+        if(trip.isBy_car()) tripType.setText("By car");
+        if(trip.isBy_foot()) tripType.setText("By foot");
+        if(trip.isBy_moto()) tripType.setText("By motorcycle");
 
 
 

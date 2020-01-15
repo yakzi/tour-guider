@@ -85,11 +85,38 @@
             android:textSize="15sp"
             android:layout_marginBottom="10dp"
             android:layout_marginRight="100dp"
-            android:id="@+id/typeLabel"
+            android:id="@+id/likesLabel"
             android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tripDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Liked by:"/>
+
+        <TextView
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:id="@+id/likesText"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toRightOf="@id/typeLabel"
+            app:layout_constraintStart_toStartOf="@id/typeLabel"
+            app:layout_constraintTop_toBottomOf="@id/tripDesc"
+            android:layout_marginLeft="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LIKES"/>
+
+        <TextView
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="100dp"
+            android:id="@+id/typeLabel"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/likesLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Trip type:"/>
@@ -101,7 +128,7 @@
             android:layout_marginTop="10dp"
             app:layout_constraintLeft_toRightOf="@id/typeLabel"
             app:layout_constraintStart_toStartOf="@id/typeLabel"
-            app:layout_constraintTop_toBottomOf="@id/tripDesc"
+            app:layout_constraintTop_toBottomOf="@id/likesText"
             android:layout_marginLeft="100dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -145,7 +172,7 @@
             android:layout_marginTop="50dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:text="Like this trip!"
+            android:text="Like it!"
             android:background="@color/colorPrimary"
             android:textColor="@color/colorBackground"/>
 
@@ -160,7 +187,7 @@
             android:layout_marginTop="110dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:text="Add to observed"
+            android:text="Observe"
             android:background="@color/colorPrimary"
             android:textColor="@color/colorBackground"/>
 
@@ -175,7 +202,7 @@
             android:layout_marginTop="170dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:text="Take part in this trip"
+            android:text="Take part"
             android:background="@color/colorPrimary"
             android:textColor="@color/colorBackground"/>
 
