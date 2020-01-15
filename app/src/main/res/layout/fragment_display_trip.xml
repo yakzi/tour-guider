@@ -191,6 +191,21 @@
             android:background="@color/colorPrimary"
             android:textColor="@color/colorBackground"/>
 
+        <TextView
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:id="@+id/textNotLogged"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tripPrice"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:text="Log in to observe, \n like, and take part \n in this trip!"
+            android:textAlignment="center"/>
+
         <Button
             android:textSize="20sp"
             android:id="@+id/buttonTakePart"

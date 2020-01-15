@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -26,7 +27,11 @@ public class DisplayTripFragment extends Fragment {
     private TextView tripType;
     private TextView tripPlace;
     private TextView tripPrice;
+    private TextView textNotLogged;
     private TextView tripLikes;
+    private Button observe;
+    private Button like;
+    private Button takePart;
 
     public DisplayTripFragment() {
 
@@ -45,6 +50,23 @@ public class DisplayTripFragment extends Fragment {
         tripPlace = view.findViewById(R.id.tripPlace);
         tripPrice = view.findViewById(R.id.tripPrice);
         tripLikes = view.findViewById(R.id.likesText);
+        observe = view.findViewById(R.id.buttonAddToObservedTrip);
+        like = view.findViewById(R.id.buttonLikeTrip);
+        takePart = view.findViewById(R.id.buttonTakePart);
+        textNotLogged = view.findViewById(R.id.textNotLogged);
+
+        if (!SharedPrefManager.getInstance(getContext()).isLoggedIn()) {
+            observe.setVisibility(View.INVISIBLE);
+            like.setVisibility(View.INVISIBLE);
+            takePart.setVisibility(View.INVISIBLE);
+            textNotLogged.setVisibility(View.VISIBLE);
+        }
+
+        else
+        {
+            textNotLogged.setVisibility(View.INVISIBLE);
+        }
+
 
         Bundle bundle = getArguments();
         Trip trip= (Trip) bundle.getSerializable("TRIP");
