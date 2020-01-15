@@ -18,6 +18,8 @@
             android:padding="2dp" />
 
         <TextView
+            android:layout_marginRight="1dp"
+            android:layout_marginLeft="1dp"
             android:paddingLeft="10dp"
             android:background="@color/colorTextBackground"
             android:id="@+id/tripName"
@@ -33,6 +35,8 @@
             android:textStyle="bold" />
 
         <TextView
+            android:layout_marginRight="1dp"
+            android:layout_marginLeft="1dp"
             android:paddingLeft="10dp"
             android:background="@color/colorTextBackground"
             android:id="@+id/tripPlace"
@@ -46,15 +50,18 @@
             android:textSize="20sp"/>
 
         <TextView
-            android:textColor="#FFFF"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/colorTextBackground"
             android:id="@+id/tripLikes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@id/tripImage"
-            android:layout_alignLeft="@id/tripImage"
-            android:layout_alignRight="@id/tripImage"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
             android:textAlignment="viewEnd"
-            android:text="x"
+            android:text=""
+            android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:textSize="20sp"
             android:gravity="end" />
