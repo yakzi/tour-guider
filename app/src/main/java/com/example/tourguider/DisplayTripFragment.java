@@ -2,6 +2,7 @@ package com.example.tourguider;
 
 
 import android.media.Image;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -17,7 +18,12 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.w3c.dom.Text;
+
+import java.util.HashMap;
 
 public class DisplayTripFragment extends Fragment {
 
@@ -32,6 +38,7 @@ public class DisplayTripFragment extends Fragment {
     private Button observe;
     private Button like;
     private Button takePart;
+    private Trip trip;
 
     public DisplayTripFragment() {
 
@@ -69,7 +76,7 @@ public class DisplayTripFragment extends Fragment {
 
 
         Bundle bundle = getArguments();
-        Trip trip= (Trip) bundle.getSerializable("TRIP");
+        trip = (Trip) bundle.getSerializable("TRIP");
 
         Glide.with(this)
                 .load(trip.getPhoto())
@@ -89,11 +96,61 @@ public class DisplayTripFragment extends Fragment {
         takePart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                loadGuide();
             }
         });
 
         return view;
+    }
+
+    private void loadGuide() {
+
+        class GuideLoad extends AsyncTask<Void, Void, String> {
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+
+                try {
+                    JSONObject obj = new JSONObject(s);
+
+                    if (!obj.getBoolean("error")) {
+
+                        JSONObject guideJson = obj.getJSONObject("tripownerdata");
+                        Guide guide = new Guide(
+                            guideJson.getInt("id_user"),
+                            guideJson.getString("username"),
+                            guideJson.getString("name"),
+                            guideJson.getString("surname"),
+                            guideJson.getString("email"),
+                            guideJson.getInt("phone")
+                        );
+                        } else {
+                        Toast.makeText(getContext(), "Server error", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            protected String doInBackground(Void... voids) {
+
+                RequestHandler requestHandler = new RequestHandler();
+                HashMap<String, String> params = new HashMap<>();
+                params.put("tripname", trip.getTrip_name());
+
+                return requestHandler.sendPostRequest(URLs.URL_TAKEPART, params);
+            }
+        }
+
+        GuideLoad g1 = new GuideLoad();
+        g1.execute();
     }
 
 }
