@@ -86,7 +86,12 @@ public class DisplayTripFragment extends Fragment {
         if(trip.isBy_foot()) tripType.setText("By foot");
         if(trip.isBy_moto()) tripType.setText("By motorcycle");
 
+        takePart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
 
         return view;
     }

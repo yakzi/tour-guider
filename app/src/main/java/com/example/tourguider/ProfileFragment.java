@@ -26,9 +26,8 @@ public class ProfileFragment extends Fragment {
     Button logoutButton;
     Button buttonAddTrip;
     Button payButton;
-    TextView  textViewUsername, textViewEmail;
+    TextView  textViewUsername, textViewEmail , textViewDaysLeft;
 
-    String amount = "25";
     private static final int PAYPAL_REQUEST_CODE = 7171;
     private static PayPalConfiguration config = new PayPalConfiguration()
             .environment(PayPalConfiguration.ENVIRONMENT_SANDBOX)
@@ -46,6 +45,8 @@ public class ProfileFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
+        textViewDaysLeft = view.findViewById(R.id.subLeft);
+        textViewDaysLeft.setText(MainActivity.daysLeft + " Days");
         textViewUsername = view.findViewById(R.id.textViewUsername);
         textViewEmail =  view.findViewById(R.id.textViewEmail);
         User user = SharedPrefManager.getInstance(getContext()).getUser();
@@ -105,6 +106,10 @@ public class ProfileFragment extends Fragment {
         getActivity().startActivityForResult(intent, PAYPAL_REQUEST_CODE);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
 
-
+        textViewDaysLeft.setText(MainActivity.daysLeft + " Days");
+    }
 }

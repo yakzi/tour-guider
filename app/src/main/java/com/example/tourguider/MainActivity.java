@@ -18,6 +18,8 @@ import org.json.JSONException;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static int daysLeft = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +70,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     try{
                         String paymentDetails = confirmation.toJSONObject().toString(4);
-                        Toast.makeText(this, "Payment confirmed \n" + paymentDetails + "\n" + "30", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Payment confirmed \n" + paymentDetails + "\n" + "30", Toast.LENGTH_LONG).show();
+                        daysLeft += 30;
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
