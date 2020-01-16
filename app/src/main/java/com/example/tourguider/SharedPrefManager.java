@@ -54,6 +54,5 @@ public class SharedPrefManager {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.clear();
         editor.apply();
-        //TODO - GO TO LoginFragment in here
     }
 }

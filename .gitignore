@@ -63,3 +63,6 @@ fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
 fastlane/readme.md
+
+# PayPal files
+app/src/main/java/com/example/tourguider/PayPalConfig.java
