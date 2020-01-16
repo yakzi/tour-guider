@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,6 +40,7 @@ public class DisplayTripFragment extends Fragment {
     private Button like;
     private Button takePart;
     private Trip trip;
+    private Guide guide;
 
     public DisplayTripFragment() {
 
@@ -122,7 +124,7 @@ public class DisplayTripFragment extends Fragment {
                     if (!obj.getBoolean("error")) {
 
                         JSONObject guideJson = obj.getJSONObject("tripownerdata");
-                        Guide guide = new Guide(
+                        guide = new Guide(
                             guideJson.getInt("id_user"),
                             guideJson.getString("username"),
                             guideJson.getString("name"),
@@ -130,6 +132,18 @@ public class DisplayTripFragment extends Fragment {
                             guideJson.getString("email"),
                             guideJson.getInt("phone")
                         );
+
+
+                        Fragment newFragment = new GuideInfoFragment();
+                        Bundle bundle = new Bundle();
+                        bundle.putSerializable("GUIDE", guide);
+                        newFragment.setArguments(bundle);
+                        FragmentManager fragmentManager = getFragmentManager();
+                        fragmentManager.beginTransaction()
+                                .replace(R.id.displayTripFragment, newFragment)
+                                .addToBackStack(this.getClass().getName())
+                                .commit();
+
                         } else {
                         Toast.makeText(getContext(), "Server error", Toast.LENGTH_SHORT).show();
                     }

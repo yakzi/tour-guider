@@ -1,6 +1,8 @@
 package com.example.tourguider;
 
-public class Guide {
+import java.io.Serializable;
+
+public class Guide implements Serializable {
     private int id_user;
     private String username;
     private String name;

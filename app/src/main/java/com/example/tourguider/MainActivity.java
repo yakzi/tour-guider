@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                     try{
                         String paymentDetails = confirmation.toJSONObject().toString(4);
                         Toast.makeText(this, "Payment confirmed \n" + paymentDetails + "\n" + "30", Toast.LENGTH_LONG).show();
+                        //Toast.makeText(this, paymentDetails, Toast.LENGTH_SHORT).show();
                         daysLeft += 30;
                     } catch (JSONException e) {
                         e.printStackTrace();
