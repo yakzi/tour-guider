@@ -1,7 +1,7 @@
-<p align="center">
+<h1 align="center">
  <strong>TourGuider</strong>
- <br/><br/>
-</p>
+<br/>
+</h1>
 
 
 ## Table of contents
