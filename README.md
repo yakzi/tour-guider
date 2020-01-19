@@ -17,13 +17,13 @@ TourGuider is an mobile application, which is made both for tour guides, people 
 Browse and take part in tours created by guides. Observe, like, and share those which You like. Travelling with TourGuider is fun and simple. 
 
 ## Features
--Create guide or normal user account
--Take part in tours
--Add tours to observed
--View history of tours that you have participated in
--Add trip as a Guide, previously buying an application subscription via PayPal
--Browse tours
--Rate tours
+* Create guide or normal user account
+* Take part in tours
+* Add tours to observed
+* View history of tours that you have participated in
+* Add trip as a Guide, previously buying an application subscription via PayPal
+* Browse tours
+* Rate tours
 
 ## Technologies
 * Android Studio
