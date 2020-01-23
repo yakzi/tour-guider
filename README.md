@@ -7,6 +7,7 @@
 ## Table of contents
 * [Introduction](#introduction)
 * [Features](#features)
+* [Screenshots](#screenshots)
 * [Technologies](#technologies)
 * [Contributors](#contributors)
 * [Launch](#launch)
@@ -24,6 +25,11 @@ Browse and take part in tours created by guides. Observe, like, and share those 
 * Add trip as a Guide, previously buying an application subscription via PayPal
 * Browse tours
 * Rate tours
+
+## Screenshots
+<p align="center">
+ <img src="./Screenshots/tourguider.jpg" alt="Screenshot form TourGuider application"/>
+</p>
 
 ## Technologies
 * Android Studio
