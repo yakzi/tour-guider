@@ -52,7 +52,8 @@ Application tested on Android 7.1, 8.0, 9.0
 4. Run application on emulator or Android mobile connected via USB
 
 Important note: Server is needed to make this application work properly. Due to abuses, 24/7 online remote server has been shut down. 
-If you want to try this application by yourself, server and sample database can be found here (link soon)
+If you want to try this application by yourself, server and sample database can be found here (link soon).
+Important note #2: If You want to use PayPal in this application, You will need to enter Your PayPal client ID into file "PayPalConfig.java". 
 
 ## License
 GNU General Public License v3.0
